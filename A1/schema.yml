@@ -1,0 +1,712 @@
+openapi: 3.0.3
+info:
+  title: MPP Swagger
+  version: 1.0.0
+paths:
+  /dogowners/:
+    get:
+      operationId: dogowners_retrieve
+      tags:
+      - dogowners
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DogOwner'
+          description: ''
+    post:
+      operationId: dogowners_create
+      tags:
+      - dogowners
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DogOwner'
+          description: ''
+  /dogowners/{id_dog}/{id_owner}:
+    get:
+      operationId: dogowners_retrieve_2
+      parameters:
+      - in: path
+        name: id_dog
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: id_owner
+        schema:
+          type: integer
+        required: true
+      tags:
+      - dogowners
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DogOwner'
+          description: ''
+    put:
+      operationId: dogowners_update
+      parameters:
+      - in: path
+        name: id_dog
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: id_owner
+        schema:
+          type: integer
+        required: true
+      tags:
+      - dogowners
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DogOwner'
+          description: ''
+    delete:
+      operationId: dogowners_destroy
+      parameters:
+      - in: path
+        name: id_dog
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: id_owner
+        schema:
+          type: integer
+        required: true
+      tags:
+      - dogowners
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /dogs/:
+    get:
+      operationId: dogs_retrieve
+      tags:
+      - dogs
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dogs'
+          description: ''
+    post:
+      operationId: dogs_create
+      tags:
+      - dogs
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dogs'
+          description: ''
+  /dogs/{dog_id}/owners:
+    post:
+      operationId: dogs_owners_create
+      parameters:
+      - in: path
+        name: dog_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - dogs
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DogOwner'
+          description: ''
+  /dogs/{id}:
+    get:
+      operationId: dogs_retrieve_2
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - dogs
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DogsSerializerDetails'
+          description: ''
+    put:
+      operationId: dogs_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - dogs
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DogsSerializerDetails'
+          description: ''
+    delete:
+      operationId: dogs_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - dogs
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /dogs/avg-by-toy-price:
+    get:
+      operationId: dogs_avg_by_toy_price_retrieve
+      tags:
+      - dogs
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dogs'
+          description: ''
+  /dogs/nr-of-owners:
+    get:
+      operationId: dogs_nr_of_owners_retrieve
+      tags:
+      - dogs
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dogs'
+          description: ''
+  /owners/:
+    get:
+      operationId: owners_retrieve
+      tags:
+      - owners
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Owner'
+          description: ''
+    post:
+      operationId: owners_create
+      tags:
+      - owners
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Owner'
+          description: ''
+  /owners/{id}:
+    get:
+      operationId: owners_retrieve_2
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - owners
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OwnerSerializerDetails'
+          description: ''
+    put:
+      operationId: owners_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - owners
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OwnerSerializerDetails'
+          description: ''
+    delete:
+      operationId: owners_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - owners
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /toys/:
+    get:
+      operationId: toys_retrieve
+      tags:
+      - toys
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Toy'
+          description: ''
+    post:
+      operationId: toys_create
+      tags:
+      - toys
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Toy'
+          description: ''
+  /toys/{id}:
+    get:
+      operationId: toys_retrieve_2
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - toys
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToySerializerDetails'
+          description: ''
+    put:
+      operationId: toys_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - toys
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ToySerializerDetails'
+          description: ''
+    delete:
+      operationId: toys_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - toys
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    DogOwner:
+      type: object
+      properties:
+        dog:
+          type: integer
+        owner:
+          type: integer
+        adoption_date:
+          type: string
+          format: date
+        adoption_fee:
+          type: integer
+      required:
+      - adoption_date
+      - adoption_fee
+      - dog
+      - owner
+    DogOwnerSerializerForDogs:
+      type: object
+      properties:
+        owner:
+          allOf:
+          - $ref: '#/components/schemas/Owner'
+          readOnly: true
+        adoption_date:
+          type: string
+          format: date
+        adoption_fee:
+          type: integer
+      required:
+      - adoption_date
+      - adoption_fee
+      - owner
+    DogOwnerSerializerForOwners:
+      type: object
+      properties:
+        dog:
+          allOf:
+          - $ref: '#/components/schemas/Dogs'
+          readOnly: true
+        adoption_date:
+          type: string
+          format: date
+        adoption_fee:
+          type: integer
+      required:
+      - adoption_date
+      - adoption_fee
+      - dog
+    Dogs:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 50
+        breed:
+          type: string
+          maxLength: 100
+        colour:
+          type: string
+          maxLength: 50
+        is_healthy:
+          type: boolean
+        date_of_birth:
+          type: string
+          format: date
+        avg_price:
+          type: number
+          format: double
+          readOnly: true
+        nr_of_owners:
+          type: integer
+          readOnly: true
+      required:
+      - avg_price
+      - breed
+      - colour
+      - date_of_birth
+      - id
+      - is_healthy
+      - name
+      - nr_of_owners
+    DogsSerializerDetails:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 50
+        breed:
+          type: string
+          maxLength: 100
+        colour:
+          type: string
+          maxLength: 50
+        is_healthy:
+          type: boolean
+        date_of_birth:
+          type: string
+          format: date
+        toys:
+          type: array
+          items:
+            $ref: '#/components/schemas/Toy'
+        owners:
+          type: array
+          items:
+            $ref: '#/components/schemas/DogOwnerSerializerForDogs'
+      required:
+      - breed
+      - colour
+      - date_of_birth
+      - id
+      - is_healthy
+      - name
+      - owners
+      - toys
+    Nested:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 50
+        breed:
+          type: string
+          maxLength: 100
+        colour:
+          type: string
+          maxLength: 50
+        is_healthy:
+          type: boolean
+        date_of_birth:
+          type: string
+          format: date
+      required:
+      - breed
+      - colour
+      - date_of_birth
+      - id
+      - is_healthy
+      - name
+    Owner:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        first_name:
+          type: string
+          maxLength: 50
+        last_name:
+          type: string
+          maxLength: 50
+        email:
+          type: string
+          maxLength: 50
+        city:
+          type: string
+          maxLength: 50
+        date_of_birth:
+          type: string
+          format: date
+      required:
+      - city
+      - date_of_birth
+      - email
+      - first_name
+      - id
+      - last_name
+    OwnerSerializerDetails:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        first_name:
+          type: string
+          maxLength: 50
+        last_name:
+          type: string
+          maxLength: 50
+        email:
+          type: string
+          maxLength: 50
+        city:
+          type: string
+          maxLength: 50
+        date_of_birth:
+          type: string
+          format: date
+        dogs:
+          type: array
+          items:
+            $ref: '#/components/schemas/DogOwnerSerializerForOwners'
+      required:
+      - city
+      - date_of_birth
+      - dogs
+      - email
+      - first_name
+      - id
+      - last_name
+    Toy:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 50
+        dog:
+          type: integer
+        material:
+          type: string
+          maxLength: 100
+        colour:
+          type: string
+          maxLength: 50
+        price:
+          type: integer
+      required:
+      - colour
+      - dog
+      - id
+      - material
+      - name
+      - price
+    ToySerializerDetails:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 50
+        dog:
+          allOf:
+          - $ref: '#/components/schemas/Nested'
+          readOnly: true
+        material:
+          type: string
+          maxLength: 100
+        colour:
+          type: string
+          maxLength: 50
+        price:
+          type: integer
+      required:
+      - colour
+      - dog
+      - id
+      - material
+      - name
+      - price
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
